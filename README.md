@@ -10,7 +10,11 @@ Los alias cortos de url se les llama como “enlaces cortos”, estos enlaces ah
 
 ## Despliegue continuo
 
+[![CircleCI](https://circleci.com/gh/Edyesid/ARSW-URL-Shortening-Service.svg?style=svg)](https://circleci.com/gh/Edyesid/ARSW-URL-Shortening-Service)
+
 ## Calidad de codigo
+
+
 
 ## Construido con:
 
