@@ -14,7 +14,7 @@ Los alias cortos de url se les llama como “enlaces cortos”, estos enlaces ah
 
 ## Calidad de codigo
 
-
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d1ae876d80cd4275b5884a53546f334f)](https://www.codacy.com/gh/Edyesid/ARSW-URL-Shortening-Service/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Edyesid/ARSW-URL-Shortening-Service&amp;utm_campaign=Badge_Grade)
 
 ## Construido con:
 
