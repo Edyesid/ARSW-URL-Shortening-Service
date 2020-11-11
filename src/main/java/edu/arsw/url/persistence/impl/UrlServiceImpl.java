@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 public class UrlServiceImpl implements UrlPersistence {
     @Autowired
     UrlRepository urlRepository;
-
     @Override
     public String createUrl(String originalUrl, String expirationDate) {
         Url url = new Url(originalUrl,expirationDate);

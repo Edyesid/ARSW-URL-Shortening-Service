@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.UUID;
-@Document(collection = "url")
+@Document(collection = "urls")
 public class Url {
     @Id
     @NotNull

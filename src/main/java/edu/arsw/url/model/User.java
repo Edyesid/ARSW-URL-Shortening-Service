@@ -1,7 +1,7 @@
 package edu.arsw.url.model;
 import org.springframework.data.mongodb.core.mapping.Document;
 import javax.validation.constraints.Email;
-@Document(collection = "user")
+@Document(collection = "users")
 public class User {
     private int userID;
     private String name;
