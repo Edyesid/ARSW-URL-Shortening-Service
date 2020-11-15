@@ -1,15 +1,21 @@
 package edu.arsw.url.model;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Repository;
 import javax.validation.constraints.Email;
-@Document(collection = "users")
+import javax.validation.constraints.NotNull;
+
+@Document(collection = "User")
 public class User {
+    @Id
+    @NotNull
     private int userID;
+    private String apiKey;
     private String name;
     private String email;
     private String creationDate;
     private String lastLogin;
     public User() {
-
     }
     public int getUserID() {
         return userID;
@@ -49,5 +55,12 @@ public class User {
 
     public void setLastLogin(String lastLogin) {
         this.lastLogin = lastLogin;
+    }
+
+    public String getApiKey() {
+        return apiKey;
+    }
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
     }
 }

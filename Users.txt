@@ -1,0 +1,24 @@
+{
+    "_id": "1003587753",
+    "apiKey": "rIaLOWEArIaLOWEA",
+    "name": "Edwin",
+    "email": "edwin.rodriguez.r.m@gmail.com",
+    "creationDate": "",
+    "lastLogin": "12/11/2020"
+}
+{
+    "_id": "1003587756",
+    "apiKey": "rIaLOWEArIaLOWEA2",
+    "name": "Daniel",
+    "email": "daniel@gmail.com",
+    "creationDate": "",
+    "lastLogin": "12/11/2020"
+}
+{
+    "_id": "1003587757",
+    "apiKey": "rIaLOWEArIaLOWEA3",
+    "name": "Diego",
+    "email": "diego@gmail.com",
+    "creationDate": "",
+    "lastLogin": "12/11/2020"
+}

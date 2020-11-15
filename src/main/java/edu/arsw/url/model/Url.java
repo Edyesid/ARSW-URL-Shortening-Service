@@ -3,24 +3,23 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotNull;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
-@Document(collection = "urls")
+@Document(collection = "Url")
 public class Url {
     @Id
     @NotNull
     private String hash;
     private String originalUrl;
-    private String creationDate;
+    private LocalDateTime creationDate;
     private String expirationDate;
-    private String userId;
-
-    public Url(String originalUrl, String expirationDate) {
+    private String apiKey;
+    public Url(String originalUrl, String expirationDate, String apiKey) {
         setHash();
         this.originalUrl = originalUrl;
-        setCreationDate();
+        setCreationDate(LocalDateTime.now());
         this.expirationDate = expirationDate;
-        this.userId = "0";
+        this.apiKey = apiKey;
     }
 
     public String getOriginalUrl() {
@@ -31,14 +30,12 @@ public class Url {
         this.originalUrl = originalUrl;
     }
 
-    public String getCreationDate() {
+    public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate() {
-        Date date = new Date();
-        String actualDate = date.toString();
-        this.creationDate = actualDate;
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
     }
 
     public String getExpirationDate() {
@@ -49,21 +46,20 @@ public class Url {
         this.expirationDate = expirationDate;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
     public String getHash() {
         return hash;
     }
 
     public void setHash() {
-        String url = "Http//:urlShort/";
+        String url = "http//:urlShort/";
         String urlHash = UUID.randomUUID().toString();
         this.hash = url + urlHash;
+    }
+    public String getApiKey() {
+        return apiKey;
+    }
+
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
     }
 }
