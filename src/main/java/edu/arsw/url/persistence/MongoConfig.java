@@ -13,10 +13,10 @@ public class MongoConfig {
     private String dbname;
     @Bean
     public MongoClient mongoClient() {
-        return MongoClients.create(uri);
+        return MongoClients.create("mongodb+srv://edwin_arsw:edwin123@cluster0.s2ygl.mongodb.net/<dbname>?retryWrites=true&w=majority");
     }
     @Bean
     public MongoTemplate mongoTemplate() {
-        return new MongoTemplate(mongoClient(), dbname);
+        return new MongoTemplate(mongoClient(), "UrlShortingDB");
     }
 }
