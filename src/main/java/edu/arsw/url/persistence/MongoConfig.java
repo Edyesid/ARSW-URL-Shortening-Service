@@ -14,7 +14,7 @@ public class MongoConfig {
     private String dbname;*/
     @Bean
     public MongoClient mongoClient() {
-        return MongoClients.create("mongodb+srv://edwin_arsw:edwin123@cluster0.s2ygl.mongodb.net/<dbname>?retryWrites=true&w=majority");
+        return MongoClients.create("mongodb://edwin_arsw:edwin123@cluster0-shard-00-00.s2ygl.mongodb.net:27017,cluster0-shard-00-01.s2ygl.mongodb.net:27017,cluster0-shard-00-02.s2ygl.mongodb.net:27017/<dbname>?ssl=true&replicaSet=atlas-crmszv-shard-0&authSource=admin&retryWrites=true&w=majority");
     }
     @Bean
     public MongoTemplate mongoTemplate() {
