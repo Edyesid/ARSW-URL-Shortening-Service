@@ -9,6 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.net.UnknownHostException;
+
 @RestController
 @RequestMapping(value = "/urls")
 public class UrlController {
@@ -32,11 +36,16 @@ public class UrlController {
             return new ResponseEntity<>(e.getMessage(),HttpStatus.NOT_ACCEPTABLE);
         }
     }
+    @GetMapping(value = "/{hash}")
+    public void getOriginalUrl(HttpServletResponse response, @PathVariable("hash") String hash) throws UrlException, IOException {
+        System.out.println(hash);
+        response.sendRedirect(urlservice.getOriginalUrl(hash));
+    }
     /*--------------------------------------------------------------
     * pruebas
     * --------------------------------------------------------------*/
     @GetMapping(value = "/usuarios")
-    public ResponseEntity<?> getUsers() {
+    public ResponseEntity<?> getUsers() throws UnknownHostException {
         return new ResponseEntity<>(urlservice.getUsers(), HttpStatus.ACCEPTED);
     }
 }

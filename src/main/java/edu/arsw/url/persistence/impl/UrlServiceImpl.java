@@ -23,17 +23,25 @@ public class UrlServiceImpl implements UrlPersistence {
             throw new UserException(UserException.MAX_ALLOWED);
         }
         urlRepository.save(url);
-        return url.getHash();
+        return url.getShortUrl();
     }
     @Override
-    public String deleteUrl(String apikey, String hash) throws UrlException {
+    public String deleteUrl(String apikey, String urlkey) throws UrlException {
         String message = "URL Removed";
-        if(!urlRepository.existsById(hash)) {
+        if(!urlRepository.existsById(urlkey)) {
             throw new UrlException(UrlException.URL_NOT_FOUND);
         }
-        urlRepository.deleteById(hash);
+        urlRepository.deleteById(urlkey);
         return message;
     }
+
+    @Override
+    public String getOriginalUrl(String hash) throws UrlException {
+        Url url = urlRepository.findById(hash).orElseThrow(()->new UrlException(UrlException.URL_NOT_FOUND));
+        System.out.println(url.getOriginalUrl());
+        return url.getOriginalUrl();
+    }
+
     @Override
     public List<User> getUsers() {
         return userRepository.findAll();

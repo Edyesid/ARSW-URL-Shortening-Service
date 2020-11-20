@@ -20,7 +20,10 @@ public class UrlService {
     public String createUrl(String apikey, Url url) throws UserException {
         return urlpersistence.createUrl(apikey,url);
     }
-    public String deleteUrl(String apikey, String hash) throws UrlException {
-        return urlpersistence.deleteUrl(apikey,hash);
+    public String deleteUrl(String apikey, String urlkey) throws UrlException {
+        return urlpersistence.deleteUrl(apikey,urlkey);
+    }
+    public String getOriginalUrl(String hash) throws UrlException {
+        return urlpersistence.getOriginalUrl(hash);
     }
 }
