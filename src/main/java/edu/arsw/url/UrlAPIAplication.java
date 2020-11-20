@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
  * @author Edwin Yesid Rodriguez Maldonado
  */
 @SpringBootApplication
-@EnableAutoConfiguration(exclude={MongoAutoConfiguration.class})
 public class UrlAPIAplication {
     public static void main(String[] args) {
         SpringApplication.run(UrlAPIAplication.class, args);
