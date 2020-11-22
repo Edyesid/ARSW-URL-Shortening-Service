@@ -44,6 +44,6 @@ Edwin Yesid Rodriguez Maldonado
 
 [ver](https://www.educative.io/courses/grokking-the-system-design-interview/m2ygV4E81AR)
 
-## Licencia
+## Licencia 
 
 GNU GENERAL PUBLIC LICENSE
