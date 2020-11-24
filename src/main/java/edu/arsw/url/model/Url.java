@@ -81,6 +81,7 @@ public class Url {
     public void setShortUrl(String urlHash) {
         String url = "http://";
         url += System.getenv("HOST_NAME") + "/urls/";
+        System.out.println(System.getenv("HOST_NAME"));
         this.shortUrl = url + urlHash;
     }
 
