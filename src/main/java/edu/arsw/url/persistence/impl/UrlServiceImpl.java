@@ -15,7 +15,7 @@ public class UrlServiceImpl implements UrlPersistence {
     UrlRepository urlRepository;
     @Autowired
     UserRepository userRepository;
-    private int CASES_NUM = 2;
+    private int CASES_NUM = 5;
     @Override
     public String createUrl(String apikey, Url url) throws UserException {
         //contar apikeys

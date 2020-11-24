@@ -1,13 +1,17 @@
 package edu.arsw.url.model;
 import edu.arsw.url.exceptions.UrlException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import sun.tools.java.Environment;
+
 import javax.validation.constraints.NotNull;
-import java.net.InetAddress;
 import java.time.LocalDateTime;
+
 @Document(collection = "Url")
 public class Url {
+
     @Id
     @NotNull
     private String hash;
@@ -16,8 +20,7 @@ public class Url {
     private String creationDate;
     private String expirationDate;
     private String apiKey;
-    @Value("${server.port}")
-    private int localPort;
+
     public Url(String originalUrl, String expirationDate, String apiKey) throws UrlException {
         setHash();
         setShortUrl(this.hash);
@@ -25,6 +28,7 @@ public class Url {
         setCreationDate(LocalDateTime.now());
         setExpirationDate(expirationDate);
         this.apiKey = apiKey;
+
     }
     public String getOriginalUrl() {
         return originalUrl;
@@ -76,8 +80,7 @@ public class Url {
 
     public void setShortUrl(String urlHash) {
         String url = "http://";
-        System.out.println(localPort);
-        url += InetAddress.getLoopbackAddress().getHostName() +  ":" + localPort + "/urls/";
+        url += System.getenv("HOST_NAME") + "/urls/";
         this.shortUrl = url + urlHash;
     }
 
