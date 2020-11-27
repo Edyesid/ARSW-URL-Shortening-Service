@@ -1,11 +1,11 @@
 package edu.arsw.url.persistence.cache;
 
 public interface UrlCache {
-    boolean exists(String city);
 
-    String get(String city);
+    boolean exists(String hash);
 
-    void set(String city, String payload);
+    String get(String hash);
 
-    void set(String city, String payload, long TTL);
+    void set(String hash, String payload);
+
 }

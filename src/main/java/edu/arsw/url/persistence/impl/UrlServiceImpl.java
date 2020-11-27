@@ -4,9 +4,12 @@ import edu.arsw.url.exceptions.UserException;
 import edu.arsw.url.model.Url;
 import edu.arsw.url.model.User;
 import edu.arsw.url.persistence.UrlPersistence;
+import edu.arsw.url.persistence.cache.UrlCache;
+import edu.arsw.url.persistence.cache.impl.UrlCacheImpl;
 import edu.arsw.url.repository.UrlRepository;
 import edu.arsw.url.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
@@ -15,6 +18,9 @@ public class UrlServiceImpl implements UrlPersistence {
     UrlRepository urlRepository;
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    @Qualifier("UrlCacheImpl")
+    UrlCache urlCache;
     private int CASES_NUM = 5;
     @Override
     public String createUrl(String apikey, Url url) throws UserException {
@@ -23,6 +29,8 @@ public class UrlServiceImpl implements UrlPersistence {
             throw new UserException(UserException.MAX_ALLOWED);
         }
         urlRepository.save(url);
+        System.out.println(urlCache.exists("hola"));
+        urlCache.set("prueba","prueba1");
         return url.getShortUrl();
     }
     @Override
