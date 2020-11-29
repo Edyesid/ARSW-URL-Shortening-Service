@@ -37,9 +37,13 @@ public class UrlController {
         }
     }
     @GetMapping(value = "/{hash}")
-    public void getOriginalUrl(HttpServletResponse response, @PathVariable("hash") String hash) throws UrlException, IOException {
-        System.out.println(hash);
-        response.sendRedirect(urlservice.getOriginalUrl(hash));
+    public ResponseEntity<?> getOriginalUrl(HttpServletResponse response, @PathVariable("hash") String hash) throws UrlException, IOException {
+        try {
+            response.sendRedirect(urlservice.getOriginalUrl(hash));
+            return new ResponseEntity<>(HttpStatus.PERMANENT_REDIRECT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
+        }
     }
     /*--------------------------------------------------------------
     * pruebas

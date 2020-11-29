@@ -31,14 +31,15 @@ public class UrlCacheImpl implements UrlCache {
     }
 
     @Override
-    public void set(String hash, String payload) {
-        System.out.println(hash);
-        System.out.println(payload);
-        valueOperations.set(getKey(hash),payload);
+    public void set(String hash, String url) {
+        valueOperations.set(getKey(hash),url);
+    }
+    @Override
+    public void delete(String hash) {
+        redisTemplate.delete(getKey(hash));
     }
 
     private String getKey(String hash) {
-        System.out.println(String.format("%s:%s", URL_KEY, hash));
         return String.format("%s:%s", URL_KEY, hash);
     }
 }

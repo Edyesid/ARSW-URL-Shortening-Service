@@ -1,7 +1,9 @@
 package edu.arsw.url.model;
+import com.google.gson.Gson;
 import edu.arsw.url.exceptions.UrlException;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.redis.core.RedisHash;
 
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
@@ -87,5 +89,10 @@ public class Url {
     }
     public void setApiKey(String apiKey) {
         this.apiKey = apiKey;
+    }
+
+    public String toString() {
+        Gson gson = new Gson();
+        return gson.toJson(this);
     }
 }
