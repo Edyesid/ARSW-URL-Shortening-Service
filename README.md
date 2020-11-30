@@ -48,4 +48,4 @@ Edwin Yesid Rodriguez Maldonado
 
 GNU GENERAL PUBLIC LICENSE
 
-[![ScreenShot](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://youtu.be/F0YvvJsoCdk)
+[![ScreenShot]()](https://youtu.be/F0YvvJsoCdk)
