@@ -3,14 +3,10 @@ import com.google.gson.Gson;
 import edu.arsw.url.exceptions.UrlException;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.redis.core.RedisHash;
-
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
-
 @Document(collection = "Url")
 public class Url {
-
     @Id
     @NotNull
     private String hash;
@@ -19,7 +15,6 @@ public class Url {
     private String creationDate;
     private String expirationDate;
     private String apiKey;
-
     public Url(String originalUrl, String expirationDate, String apiKey) throws UrlException {
         setHash();
         setShortUrl(this.hash);
@@ -27,12 +22,10 @@ public class Url {
         setCreationDate(LocalDateTime.now());
         setExpirationDate(expirationDate);
         this.apiKey = apiKey;
-
     }
     public String getOriginalUrl() {
         return originalUrl;
     }
-
     public void setOriginalUrl(String originalUrl) throws UrlException {
         String pattern = "^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
         if (originalUrl.matches(pattern)) {
@@ -44,22 +37,19 @@ public class Url {
     public String getCreationDate() {
         return creationDate;
     }
-
     public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate.toString();
     }
     public String getExpirationDate() {
         return expirationDate;
     }
-
     public void setExpirationDate(String expirationDate) throws UrlException {
-        /*try {
-            LocalDateTime DATE = LocalDateTime.parse(expirationDate);
-            this.expirationDate = DATE;
-        } catch (Exception e) {
+        String pattern = "^(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2})";
+        if (expirationDate.matches(pattern)) {
+            this.expirationDate = expirationDate;
+        } else {
             throw new UrlException(UrlException.INCORRECT_DATE);
-        }*/
-        this.expirationDate = expirationDate;
+        }
     }
     public String getHash() {
         return hash;
@@ -72,25 +62,20 @@ public class Url {
         }
         this.hash = url;
     }
-
     public String getShortUrl() {
         return shortUrl;
     }
-
     public void setShortUrl(String urlHash) {
         String url = "http://";
         url += System.getenv("HOST_NAME") + "/urls/";
-        System.out.println(System.getenv("HOST_NAME"));
         this.shortUrl = url + urlHash;
     }
-
     public String getApiKey() {
         return apiKey;
     }
     public void setApiKey(String apiKey) {
         this.apiKey = apiKey;
     }
-
     public String toString() {
         Gson gson = new Gson();
         return gson.toJson(this);

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.UnknownHostException;
-
 @RestController
 @RequestMapping(value = "/urls")
 public class UrlController {
@@ -45,9 +44,6 @@ public class UrlController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
         }
     }
-    /*--------------------------------------------------------------
-    * pruebas
-    * --------------------------------------------------------------*/
     @GetMapping(value = "/usuarios")
     public ResponseEntity<?> getUsers() throws UnknownHostException {
         return new ResponseEntity<>(urlservice.getUsers(), HttpStatus.ACCEPTED);
