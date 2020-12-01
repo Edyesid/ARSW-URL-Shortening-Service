@@ -12,7 +12,6 @@ public class UrlCacheImpl implements UrlCache {
     private HashOperations hashOperations;
     private ValueOperations valueOperations;
     private RedisTemplate redisTemplate;
-
     public UrlCacheImpl(RedisTemplate redisTemplate) {
         this.redisTemplate = redisTemplate;
         this.hashOperations = this.redisTemplate.opsForHash();
