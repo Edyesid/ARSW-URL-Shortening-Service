@@ -33,9 +33,13 @@ public class UrlServiceImpl implements UrlPersistence {
 
     @Override
     public String createUrl(String apikey, Url url) throws UserException {
-        if(urlRepository.countByApiKey(apikey) >= CASES_NUM) {
-            throw new UserException(UserException.MAX_ALLOWED);
-        } else if (urlRepository.countByApiKey(apikey).equals(0)) {
+        System.out.println(userRepository.existsByApiKey(apikey));
+        if (userRepository.existsByApiKey(apikey)) {
+            System.out.println(urlRepository.countByApiKey(apikey));
+            if(urlRepository.countByApiKey(apikey) >= CASES_NUM) {
+                throw new UserException(UserException.MAX_ALLOWED);
+            }
+        } else {
             throw new UserException(UserException.USER_NOT_EXIST);
         }
         urlRepository.save(url);
