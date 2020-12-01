@@ -30,7 +30,7 @@ Los alias cortos de url se les llama como “enlaces cortos”, estos enlaces ah
 
  * Como usuario quiero poder obtener un alias de una url, dada una fecha de expiración y la url original para poder facilitar copiar y pegar el enlace a la página web deseada.
  
- [![ScreenShot](img/cu.png)](https://youtu.be/LcMS_zIWgjE)
+ [![ScreenShot](img/videos/crear.png)](https://youtu.be/LcMS_zIWgjE)
  
  * Como usuario quiero redirigirme a la página web que representa su url mediante una url más corta, para poder facilitar la usabilidad de un enlace mas largo.
  * Como usuario quiero poner un tiempo de duración del alias de una url para poder usar esta solo el tiempo que la requiero.
