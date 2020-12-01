@@ -24,6 +24,20 @@ Los alias cortos de url se les llama como “enlaces cortos”, estos enlaces ah
 
 ![cu](img/cu.png)
 
+## Requesitos y metas del sistema
+
+### Requerimientos funcionales
+
+ * Como usuario quiero poder obtener un alias de una url, dada una fecha de expiración y la url original para poder facilitar copiar y pegar el enlace a la página web deseada.
+ * Como usuario quiero redirigirme a la página web que representa su url mediante una url más corta, para poder facilitar la usabilidad de un enlace mas largo.
+ * Como usuario quiero poner un tiempo de duración del alias de una url para poder usar esta solo el tiempo que la requiero.
+ 
+### Requerimientos no funcionales
+
+ * La redirección de URL debe ocurrir en tiempo real con una latencia mínima
+ * Los enlaces acortados no deben ser adivinables y no debería generarse dos o más iguales
+ * El servicio debe de soportar cargas de estrés altas 
+ 
 ## Construido con:
 
   * [IntellJ](https://www.jetbrains.com/es-es/idea/) Entorno de desarrollo integrado para el desarrollo de programas informáticos.
@@ -35,6 +49,12 @@ Los alias cortos de url se les llama como “enlaces cortos”, estos enlaces ah
   * [GitHub](https://github.com/) Sistema de control de versiones Git.
 
   * [Postman](https://www.postman.com/) Plataforma de colaboración para el desarrollo de API.
+  
+  * [Redis](https://redislabs.com/) Motor de base de datos no relacional.
+  
+  * [mongoDb]() Motor de base de datos no relacional
+  
+  * [Studio3T](https://studio3t.com/) Cliente administrador de base de datos mongo
 
 ## Autor
 
