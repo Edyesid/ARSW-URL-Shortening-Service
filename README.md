@@ -72,10 +72,21 @@ Limitaciones:
   •	Una única base de datos dedicada
 
   •	Máximo 30 conexiones
+  
+  Un sistema de cache nos ayuda a que el sistema este mas tiempo disponible en caso de una caída en la base de datos principal.
 
 #### La redirección de URL debe ocurrir en tiempo real con una latencia mínima
+
+
 #### Los enlaces acortados no deben ser adivinables y no debería generarse dos o más iguales
+
+El numero de posibilidades de elegir un conjunto de 6 elementos entre un total de 61 símbolos es mas o menos de 39978267840 por lo que es poco probable que se generen dos iguales
+
 #### El servicio debe de soportar cargas de estrés altas 
+
+Azure app services ofrece la posibilidad del escalamiento vertical y horizontal (hasta tres instancias) de manera manual para ayudar al sistema en tiempos de alta demanda.
+
+![azure](img/azure.png)
  
 ## Construido con:
 
