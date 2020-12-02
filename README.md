@@ -24,7 +24,7 @@ Los alias cortos de url se les llama como “enlaces cortos”, estos enlaces ah
 
 ![cu](img/cu.png)
 
-## Requesitos y metas del sistema
+## Requisitos y metas del sistema
 
 ### Requerimientos funcionales
 
