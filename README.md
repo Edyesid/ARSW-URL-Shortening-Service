@@ -33,6 +33,9 @@ Los alias cortos de url se les llama como “enlaces cortos”, estos enlaces ah
  [![ScreenShot](img/cu.png)](https://youtu.be/LcMS_zIWgjE)
  
  * Como usuario quiero redirigirme a la página web que representa su url mediante una url más corta, para poder facilitar la usabilidad de un enlace mas largo.
+ 
+ [![ScreenShot](img/2.png)](https://youtu.be/PsIqI-Bxf6Q)
+ 
  * Como usuario quiero poner un tiempo de duración del alias de una url para poder usar esta solo el tiempo que la requiero.
  
 ### Requerimientos no funcionales
