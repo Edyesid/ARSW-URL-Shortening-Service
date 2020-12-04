@@ -38,6 +38,8 @@ Los alias cortos de url se les llama como “enlaces cortos”, estos enlaces ah
  
  * Como usuario quiero poner un tiempo de duración del alias de una url para poder usar esta solo el tiempo que la requiero.
  
+ [![ScreenShot](img/videos/eliminar.png)](https://youtu.be/A_3EuLgAFG8)
+ 
 ### Requerimientos no funcionales
 
 #### El sistema debe tener una alta disponibilidad para evitar fallas en nuestras urls.
