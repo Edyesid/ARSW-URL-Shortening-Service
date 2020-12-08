@@ -27,7 +27,7 @@ public class UrlServiceImpl implements UrlPersistence {
     @Autowired
     @Qualifier("UrlCacheImpl")
     UrlCache urlCache;
-    private int CASES_NUM = 5;
+    private int CASES_NUM = 1000;
 
     private static final Logger logger = LoggerFactory.getLogger(UrlServiceImpl.class);
 
