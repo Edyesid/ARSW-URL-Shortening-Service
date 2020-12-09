@@ -84,9 +84,11 @@ Limitaciones:
 
 El numero de posibilidades de elegir un conjunto de 6 elementos entre un total de 61 símbolos es mas o menos de 39978267840 por lo que es poco probable que se generen dos iguales
 
-#### El servicio debe de soportar cargas de estrés altas 
+#### El servicio debe de soportar cargas de estrés altas
 
-Azure app services ofrece la posibilidad del escalamiento vertical y horizontal (hasta tres instancias) de manera manual para ayudar al sistema en tiempos de alta demanda.
+[![ScreenShot](img/videos/3.png)](https://youtu.be/ZX5QpFIFKsE)
+
+Azure app services ofrece la posibilidad del escalamiento vertical y horizontal (hasta tres instancias) de manera manual para ayudar al sistema en tiempos de alta demanda. Sin embargo, no fue necesario hacer uso de esta opción ya que las bases de datos no soportarían mucha más carga de la que soportan con una sola instancia. En el caso de querer usar el escalamiento vertical o horizontal se tendrá que comprar una subscripción de acuerdo capacidad que se requiera para las dos bases de datos.
 
 ![azure](img/azure.png)
  
