@@ -43,15 +43,14 @@ Los alias cortos de url se les llama como “enlaces cortos”, estos enlaces ah
 ### Requerimientos no funcionales
 
 #### El sistema debe tener una alta disponibilidad para evitar fallas en nuestras urls.
-
-#### Despliegue:
+* Despliegue:
 Para este servicio se usó dos plataformas de despliegue heroku y azure app services buscando alta disponibilidad y rendimiento.
 
   * Heroku:Cuando se despliega una aplicación en heroku esta se ejecuta en la web dyno que se puede ver como un contenedor que ejecuta comandos, heroku esta apoyada sobre aws por garantiza buena disponibilidad y buen rendimiento sin embargo el contenedor de la aplicación siempre se pondrá en reposo después de 30 minutos de inactividad.
 
   * Azure app services: Esta plataforma además de ofrecernos alto rendimiento y disponibilidad, nos provee múltiples funcionalidades para el mejoramiento de nuestra aplicación como el de poder escalar vertical u horizontalmente de manera manual según lo requiramos.
 
-#### Esquema de base de datos:
+* Esquema de base de datos:
 Para nuestro servicio necesitamos almacenar bastantes cantidades de datos, no necesitamos relaciones entre las tablas y requerimos que el sistema sea altamente disponible, por lo que una opción no sql es mejor. 
 
 * MongoDb: este motor de base de datos se utilizará como el almacén de datos de las url y de los usuarios, para este proyecto se usa un clúster gratis en la nube ofrecido por mongo Atlas con ciertas limitaciones como:
@@ -79,6 +78,7 @@ Limitaciones:
 
 #### La redirección de URL debe ocurrir en tiempo real con una latencia mínima
 
+Nuestro servicio puede tener problemas de alta latencia ya que se usan clústeres de diferentes proveedores de base de datos y la nube donde se encuentra alojada la aplicación. Una solución para mejorar el tiempo real a una latencia mínima es optar por un proveedor único o que se sepa que son cercanos como por ejemplo los servicios de base de datos y cache que ofrece Azure y al mismo tiempo alojar la aplicación en el servicio de app servicie. 
 
 #### Los enlaces acortados no deben ser adivinables y no debería generarse dos o más iguales
 
